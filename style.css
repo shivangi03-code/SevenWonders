@@ -45,7 +45,7 @@ body {
 }
 
 .navbar ul li a:hover {
-    color: #2b6485ff; 
+    color: #997930; 
 }
 
 /* Hamburger icon */
@@ -329,7 +329,7 @@ body {
 .learn-more-btn {
     display: inline-block;
     padding: 12px 24px;
-    background-color: #3498db;
+    background-color: #174b6dff;
     color: white;
     border-radius: 8px;
     font-size: 1rem;
