@@ -80,9 +80,10 @@ body {
     position: relative;
     text-align: center;
     color: white;
-    width: 100vw;
+    width: 100%;
     min-height: 100vh;
     overflow: hidden;
+   
 }
 
 .hero-bg {
@@ -132,6 +133,8 @@ body {
     transition: transform 0.3s, box-shadow 0.3s;
     width: 100px;
     text-align: center;
+     font-family: Gerogia, serif;
+     font-weight: 600;
 }
 
 .mini-card img {
@@ -158,8 +161,8 @@ body {
 
 .fun-fact {
     margin-top: 1rem;
-    font-weight: bold;
-    font-size: 1rem;
+    font-weight: 700;
+    font-size: 1.3rem;
 }
 
 /* WONDERS GRID */
@@ -214,6 +217,23 @@ body {
     font-weight: bold;
     font-size: 0.95rem;
 }
+.read-more-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 18px;
+    background: #295274ff;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.read-more-btn:hover {
+    background: #1f3e58;
+    transform: scale(1.05);
+}
+
 
 /* MODAL */
 .modal {
@@ -346,7 +366,7 @@ body {
     .zig-card:hover { transform: scale(1.05); }
 }
 
-/* ================= MOBILE PORTRAIT ROTATE MESSAGE ================= */
+/*  MOBILE PORTRAIT ROTATE MESSAGE  */
 .rotate-message {
     display: none;
     position: fixed;
