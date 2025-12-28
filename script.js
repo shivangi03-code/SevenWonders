@@ -19,6 +19,7 @@ function updateFunFact(wonder) {
 const wonderData = {
   "Great Wall of China": {
     modalImg: "./GreatWallofChina.jpg",
+    wiki: "https://en.wikipedia.org/wiki/Great_Wall_of_China",
     details: `
       <p><strong>Location:</strong> Northern China</p>
       <p><strong>Construction Period:</strong> 7th century BC – 17th century AD</p>
@@ -39,6 +40,7 @@ const wonderData = {
 
   "Christ the Redeemer": {
     modalImg: "./ChristtheRedeemer.jpg",
+    wiki: "https://en.wikipedia.org/wiki/Christ_the_Redeemer_(statue)",
     details: `
       <p><strong>Location:</strong> Rio de Janeiro, Brazil</p>
       <p><strong>Completed:</strong> 1931</p>
@@ -57,6 +59,7 @@ const wonderData = {
   },
 "Chichén Itzá": {
     modalImg: "./ChichénItzá.jpg",
+    wiki: "https://en.wikipedia.org/wiki/Chichen_Itza", 
     details: `
       <p><strong>Location:</strong> Yucatán Peninsula, Mexico</p>
       <p><strong>Built By:</strong> Mayan civilization</p>
@@ -75,6 +78,7 @@ const wonderData = {
   
   "Petra": {
     modalImg: "./Petra.jpg",
+    wiki: "https://en.wikipedia.org/wiki/Petra#:~:text=The%20area%20around%20Petra%20has,in%20the%20second%20century%20BC.", 
     details: `
       <p><strong>Location:</strong> Southern Jordan</p>
       <p><strong>Built By:</strong> Nabataean civilization</p>
@@ -94,6 +98,7 @@ const wonderData = {
 
 "Machu Picchu": {
     modalImg: "./MachuPicchu.jpg",
+    wiki: "https://en.wikipedia.org/wiki/Machu_Picchu", 
     details: `
       <p><strong>Location:</strong> Andes Mountains, Peru</p>
       <p><strong>Built By:</strong> Inca civilization</p>
@@ -115,6 +120,7 @@ const wonderData = {
 
   "Colosseum": {
     modalImg: "./Colosseum.jpg",
+    wiki: "https://en.wikipedia.org/wiki/Colosseum", 
     details: `
       <p><strong>Location:</strong> Rome, Italy</p>
       <p><strong>Built:</strong> 70–80 AD</p>
@@ -133,6 +139,7 @@ const wonderData = {
 
   "Taj Mahal": {
     modalImg: "./TajMahal.jpg",
+    wiki: "https://en.wikipedia.org/wiki/Taj_Mahal", 
     details: `
       <p><strong>Location:</strong> Agra, India</p>
       <p><strong>Built By:</strong> Mughal Emperor Shah Jahan</p>
@@ -172,9 +179,16 @@ function renderModalContent(title) {
             <div class="modal-right">
                 <img src="${data.modalImg}" alt="${title}">
             </div>
+
             <div class="modal-left">
                 <h2>${title}</h2>
                 ${data.details}
+
+                <a href="${data.wiki}" 
+                   target="_blank" 
+                   class="read-more-btn">
+                   Read More...
+                </a>
             </div>
         </div>
 
