@@ -248,11 +248,10 @@ function styleNavButtons() {
 /* CARD CLICK EVENTS */
 document.querySelectorAll(".zig-card").forEach(card => {
     card.addEventListener("click", () => {
-        const title = card.querySelector("p").childNodes[0].textContent.trim();
+        const title = card.getAttribute("data-title"); // use data-title
         openModalByIndex(wonderTitles.indexOf(title));
     });
 });
-
 
 /* CLOSE MODAL EVENTS */
 closeBtn.onclick = () => modal.classList.remove("open");
