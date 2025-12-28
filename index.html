@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7 Wonders</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="rotate-message">
+    Rotate phone ↻
+</div>
+
+<!-- Navigation Bar -->
+<nav class="navbar">
+    <div class="logo"><span style ="color: #2b6485ff;">Seven</span>Wonders</div>
+    <div class="menu-icon">&#9776;</div>
+    <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#wonders">Wonders</a></li>
+        <!-- Add this -->
+        <li><a href="https://en.wikipedia.org/wiki/New_7_Wonders_of_the_World" target="_blank">Learn More</a></li>
+    </ul>
+</nav>
+
+
+<!-- Hero Section -->
+<main class="content">
+<section class="hero" id="hero">
+    <img src="collage.jpg" alt="Seven wonders" class="hero-bg">
+    <div class="hero-text">
+        <h1>Seven Wonders of the World</h1>
+        <p class="intro">
+            Discover the incredible architectural and natural marvels of the world. Learn about their history, cultural significance, and amazing facts in one place.
+        </p>
+        <p class="fun-fact" id="funFact">
+            Fun Fact: The Great Wall of China is not visible from the moon with the naked eye!
+        </p>
+        <div class="hero-preview">
+            <div class="mini-card" onclick="updateFunFact('Taj Mahal')">
+                <img src="TajMahal2.jpg" alt="Taj Mahal">
+                <p>Taj Mahal</p>
+            </div>
+            <div class="mini-card" onclick="updateFunFact('Machu Picchu')">
+                <img src="MachuPicchu2.jpg" alt="Machu Picchu">
+                <p>Machu Picchu</p>
+            </div>
+            <div class="mini-card" onclick="updateFunFact('Petra')">
+                <img src="Petra2.jpg" alt="Petra">
+                <p>Petra</p>
+            </div>
+            <div class="mini-card" onclick="updateFunFact('Great Wall of China')">
+                <img src="GreatWallofChina2.jpg" alt="Great Wall of China">
+                <p>Great Wall of China</p>
+            </div>
+            <div class="mini-card" onclick="updateFunFact('Colosseum')">
+                <img src="Colosseum2.jpg" alt="Colosseum">
+                <p>Colosseum</p>
+            </div>
+            <div class="mini-card" onclick="updateFunFact('Christ the Redeemer')">
+                <img src="ChristtheRedeemer2.jpg" alt="Christ the Redeemer">
+                <p>Christ the Redeemer</p>
+            </div>
+            <div class="mini-card" onclick="updateFunFact('Chichén Itzá')">
+                <img src="ChichénItzá2.jpg" alt="Chichén Itzá">
+                <p>Chichén Itzá</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Wonders Section -->
+<section class="wonders-zigzag" id="wonders">
+    <h2>The New 7 Wonders of the World</h2>
+
+    <div class="zigzag-grid">
+
+        <div class="zig-card down" onclick="showInfo('wall')">
+            <img src="GreatWallofChina2.jpg">
+            <p>The Great Wall<br><small>China</small></p>
+        </div>
+
+        <div class="zig-card up" onclick="showInfo('christ')">
+            <img src="ChristtheRedeemer2.jpg">
+            <p>Christ the Redeemer<br><small>Brazil</small></p>
+        </div>
+
+        <div class="zig-card down" onclick="showInfo('chichen')">
+            <img src="ChichénItzá2.jpg">
+            <p>Chichen Itza<br><small>Mexico</small></p>
+        </div>
+
+        <div class="zig-card up" onclick="showInfo('petra')">
+            <img src="Petra2.jpg">
+            <p>Petra<br><small>Jordan</small></p>
+        </div>
+
+        <div class="zig-card down" onclick="showInfo('machu')">
+            <img src="MachuPicchu2.jpg">
+            <p>Machu Picchu<br><small>Peru</small></p>
+        </div>
+
+        <div class="zig-card up" onclick="showInfo('colosseum')">
+            <img src="Colosseum2.jpg">
+            <p>Colosseum<br><small>Italy</small></p>
+        </div>
+
+        <div class="zig-card down" onclick="showInfo('taj')">
+            <img src="TajMahal2.jpg">
+            <p>Taj Mahal<br><small>India</small></p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Learn More Section -->
+<section class="learn-more-section">
+    <h2>Want to Know More?</h2>
+    <p>Discover detailed information about the New 7 Wonders of the World on Wikipedia.</p>
+    <a href="https://en.wikipedia.org/wiki/New_7_Wonders_of_the_World" target="_blank" class="learn-more-btn">
+        Learn More
+    </a>
+</section>
+
+
+ <!-- MODAL -->
+    <div class="modal" id="modal">
+      <div class="panel">
+        <button class="close" id="close">✕</button>
+        <div id="modal-content"></div>
+      </div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>

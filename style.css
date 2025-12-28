@@ -1,0 +1,402 @@
+* {
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f4f4;
+    text-align: center;
+}
+
+/* NAVIGATION BAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0.8rem 1.2rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s; 
+}
+
+.navbar ul li a:hover {
+    color: #2b6485ff; 
+}
+
+/* Hamburger icon */
+.menu-icon {
+    display: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Mobile Navbar */
+@media (max-width: 768px) {
+    .menu-icon { display: block; }
+
+    .navbar ul {
+        position: absolute;
+        top: 55px;
+        right: 0;
+        background: rgba(0, 0, 0, 0.8);
+        width: 100%;
+        flex-direction: column;
+        display: none;
+    }
+
+    .navbar ul.show { display: flex; }
+
+    .navbar ul li { padding: 1rem 0; }
+}
+
+/* HERO SECTION */
+.hero {
+    position: relative;
+    text-align: center;
+    color: white;
+    width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.hero-bg {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    object-fit: contain;
+    filter: brightness(0.6);
+    display: block;
+    margin: 0 auto;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 1200px;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-text .intro {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.hero-preview {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+/* MINI CARDS */
+.mini-card {
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    border-radius: 12px;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 100px;
+    text-align: center;
+}
+
+.mini-card img {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Hover effect for mini cards */
+.mini-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Individual mini-card hover colors */
+.mini-card:nth-child(1):hover { box-shadow: 0 8px 20px rgba(255, 215, 200, 0.6); }
+.mini-card:nth-child(2):hover { box-shadow: 0 8px 20px rgba(160, 200, 255, 0.6); }
+.mini-card:nth-child(3):hover { box-shadow: 0 8px 20px rgba(255, 180, 140, 0.6); }
+.mini-card:nth-child(4):hover { box-shadow: 0 8px 20px rgba(200, 255, 200, 0.6); }
+.mini-card:nth-child(5):hover { box-shadow: 0 8px 20px rgba(255, 220, 180, 0.6); }
+.mini-card:nth-child(6):hover { box-shadow: 0 8px 20px rgba(180, 220, 255, 0.6); }
+.mini-card:nth-child(7):hover { box-shadow: 0 8px 20px rgba(255, 255, 180, 0.6); }
+
+.fun-fact {
+    margin-top: 1rem;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* WONDERS GRID */
+.wonders-zigzag {
+    padding: 60px 30px;
+    background: #f4f4f4;
+    text-align: center;
+}
+
+.wonders-zigzag h2 {
+    margin-bottom: 50px;
+    color: #2c3e50;
+}
+
+/* Zig-zag grid layout */
+.zigzag-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    align-items: start;
+}
+
+/* Card Base */
+.zig-card {
+    background: white;
+    border-radius: 16px;
+    padding: 10px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Zig-zag offsets */
+.zig-card:nth-child(odd) { transform: translateY(-30px); }
+.zig-card:nth-child(even) { transform: translateY(30px); }
+
+/* Only hovered card pops up */
+.zig-card:hover {
+    transform: translateY(0) scale(1.05);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+
+.zig-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.zig-card p {
+    margin: 10px 0 0;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+/* MODAL */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.modal.open { display: flex; }
+
+.panel {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 70%;
+    width: 60%;
+    max-height: 95vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.modal-flex {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.modal-left, .modal-right {
+    flex: 1 1 150px;
+    min-width: 100px;
+}
+
+.modal-left { text-align: left; }
+
+.modal-left img, .modal-right img {
+    margin-top: 5%;
+    width: 75%;
+    height: 80%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.modal-nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    font-size: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.3s;
+}
+
+.close:hover { background: #c0392b; }
+
+/* LEARN MORE SECTION  */
+.learn-more-section {
+    padding: 60px 20px;
+    background-color: white;
+    text-align: center;
+    margin-top: 40px;
+    border-radius: 12px;
+}
+
+.learn-more-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.learn-more-section p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #555;
+    animation: fadeInUp 1.2s ease forwards;
+}
+
+.learn-more-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #3498db;
+    color: white;
+    border-radius: 8px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.3s;
+    animation: fadeInUp 1.4s ease forwards;
+}
+
+.learn-more-btn:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+/* ANIMATIONS */
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* SMALL SCREEN FIX */
+@media (max-width: 480px) {
+    header h1 { font-size: 1.6rem; }
+    .card img { height: 140px; }
+    .hero-text h1 { font-size: 2rem; }
+    .hero-text .intro { font-size: 1rem; }
+    .mini-card img { width: 60px; height: 50px; }
+}
+
+/* MOBILE GRID LANDSCAPE */
+@media (max-width: 900px) and (orientation: landscape) {
+    .zigzag-grid { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+    .zig-card img { height: 140px; }
+    .panel { width: 95%; max-width: 95%; }
+    .zig-card:hover { transform: scale(1.05); }
+}
+
+/* ================= MOBILE PORTRAIT ROTATE MESSAGE ================= */
+.rotate-message {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #f4f4f4;
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Phone icon animation */
+.rotate-message::before {
+    content: "📱";
+    font-size: 3rem;
+    margin-bottom: 12px;
+    animation: rotatePhone 1.6s infinite ease-in-out;
+}
+
+/* Portrait → show message only */
+@media (max-width: 900px) and (orientation: portrait) {
+    body > *:not(.rotate-message) {
+        display: none !important;
+    }
+
+    .rotate-message {
+        display: flex !important;
+    }
+}
+
+/* Landscape → hide message */
+@media (max-width: 900px) and (orientation: landscape) {
+    .rotate-message {
+        display: none !important;
+    }
+}
+
+/* Animations */
+@keyframes rotatePhone {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(90deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
